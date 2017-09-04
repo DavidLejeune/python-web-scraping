@@ -64,3 +64,10 @@ body = soup.body
 for paragraph in body.find_all('p'):
     print(paragraph.text)
 print("")
+
+
+print("Getting the text of multiple tags")
+print("---------------------------------")
+for div in soup.find_all('div' , class_='body'):
+    print(div.text)
+print("")
