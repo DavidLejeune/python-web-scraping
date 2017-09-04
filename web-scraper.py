@@ -2,8 +2,8 @@ import bs4 as bs
 import urllib.request
 import pandas as pd
 
-sauce = urllib.request.urlopen('https://pythonprogramming.net/parsememcparseface/').read()
-soup = bs.BeautifulSoup(sauce, 'lxml')
+# sauce = urllib.request.urlopen('https://pythonprogramming.net/parsememcparseface/').read()
+# soup = bs.BeautifulSoup(sauce, 'lxml')
 
 '''
 print(soup)  # soup will give a nicely arranged html (clean)
@@ -86,8 +86,15 @@ print(sauce) # sauce will add a ton of tabs and newlines (not clean)
 #     row = [i.text for i in td]
 #     print(row)
 
-print("Pandas listing all the dataframes")
-print("---------------------------------")
-dfs = pd.read_html('https://pythonprogramming.net/parsememcparseface/' , header=0)
-for df in dfs:
-    print(df)
+# print("Pandas listing all the dataframes")
+# print("---------------------------------")
+# dfs = pd.read_html('https://pythonprogramming.net/parsememcparseface/' , header=0)
+# for df in dfs:
+#     print(df)
+
+sauce = urllib.request.urlopen('https://pythonprogramming.net/sitemap.xml').read()
+soup = bs.BeautifulSoup(sauce, 'xml')
+
+print("Sitemaps (maps of all urls of page)")
+print("-----------------------------------")
+print(soup)
