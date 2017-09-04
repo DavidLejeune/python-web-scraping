@@ -50,3 +50,10 @@ print("---------------------")
 nav = soup.nav
 print(nav)
 print("")
+
+
+print("Finding all the nav's links")
+print("---------------------------")
+for url in nav.find_all('a'):
+    print(url.get('href'))
+print("")
