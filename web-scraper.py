@@ -10,6 +10,26 @@ print(sauce) # sauce will add a ton of tabs and newlines (not clean)
 '''
 
 print("Testing html element TITLE")
+print("--------------------------")
 print(soup.title)
 print(soup.title.name)
 print(soup.title.string) # = print(soup.title.text)
+print("")
+
+
+print("Print first paragraph element")
+print("-----------------------------")
+print(soup.p)
+print("")
+
+print("Print all paragraph elements")
+print("----------------------------")
+print(soup.find_all('p'))
+print("")
+
+
+print("Print all paragraph elements with FOR loop")
+print("------------------------------------------")
+for paragraph in soup.find_all('p'):
+    print(paragraph)
+print("")
