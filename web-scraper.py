@@ -88,6 +88,6 @@ print(sauce) # sauce will add a ton of tabs and newlines (not clean)
 
 print("Pandas listing all the dataframes")
 print("---------------------------------")
-dfs = pd.read_html('https://pythonprogramming.net/parsememcparseface/')
+dfs = pd.read_html('https://pythonprogramming.net/parsememcparseface/' , header=0)
 for df in dfs:
     print(df)
