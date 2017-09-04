@@ -97,4 +97,5 @@ soup = bs.BeautifulSoup(sauce, 'xml')
 
 print("Sitemaps (maps of all urls of page)")
 print("-----------------------------------")
-print(soup)
+for url in soup.find_all('loc'):
+    print(url.text)
