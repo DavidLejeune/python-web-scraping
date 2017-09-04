@@ -45,29 +45,42 @@ print(sauce) # sauce will add a ton of tabs and newlines (not clean)
 #     print(url.get('href'))
 # print("")
 
-print("Finding all the nav's")
-print("---------------------")
-nav = soup.nav
-print(nav)
-print("")
+# print("Finding all the nav's")
+# print("---------------------")
+# nav = soup.nav
+# print(nav)
+# print("")
+#
+#
+# print("Finding all the nav's links")
+# print("---------------------------")
+# for url in nav.find_all('a'):
+#     print(url.get('href'))
+# print("")
+#
+# print("Getting the body text")
+# print("---------------------")
+# body = soup.body
+# for paragraph in body.find_all('p'):
+#     print(paragraph.text)
+# print("")
+#
+#
+# print("Getting the text of multiple tags")
+# print("---------------------------------")
+# for div in soup.find_all('div' , class_='body'):
+#     print(div.text)
+# print("")
 
 
-print("Finding all the nav's links")
-print("---------------------------")
-for url in nav.find_all('a'):
-    print(url.get('href'))
-print("")
+print("Working with table")
+print("------------------")
+# possible ways of retrieving the table :
+table = soup.table
+table = soup.find('table')
 
-print("Getting the body text")
-print("---------------------")
-body = soup.body
-for paragraph in body.find_all('p'):
-    print(paragraph.text)
-print("")
-
-
-print("Getting the text of multiple tags")
-print("---------------------------------")
-for div in soup.find_all('div' , class_='body'):
-    print(div.text)
-print("")
+table_rows = table.find_all('tr')
+for tr in table_rows:
+    td = tr.find_all('td')
+    row = [i.text for i in td]
+    print(row)
