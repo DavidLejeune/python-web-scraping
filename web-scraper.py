@@ -92,10 +92,16 @@ print(sauce) # sauce will add a ton of tabs and newlines (not clean)
 # for df in dfs:
 #     print(df)
 
-sauce = urllib.request.urlopen('https://pythonprogramming.net/sitemap.xml').read()
-soup = bs.BeautifulSoup(sauce, 'xml')
+# sauce = urllib.request.urlopen('https://pythonprogramming.net/sitemap.xml').read()
+# soup = bs.BeautifulSoup(sauce, 'xml')
+#
+# print("Sitemaps (maps of all urls of page)")
+# print("-----------------------------------")
+# for url in soup.find_all('loc'):
+#     print(url.text)
 
-print("Sitemaps (maps of all urls of page)")
-print("-----------------------------------")
-for url in soup.find_all('loc'):
-    print(url.text)
+# scrape dynamically changing content of website
+sauce = urllib.request.urlopen('https://pythonprogramming.net/parsememcparseface')
+soup = bs.BeautifulSoup(sauce, 'lxml')
+js_test = soup.find('p' , class_='jstest')
+print(js_test.text)
