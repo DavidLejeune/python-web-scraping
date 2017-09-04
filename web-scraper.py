@@ -57,3 +57,10 @@ print("---------------------------")
 for url in nav.find_all('a'):
     print(url.get('href'))
 print("")
+
+print("Getting the body text")
+print("---------------------")
+body = soup.body
+for paragraph in body.find_all('p'):
+    print(paragraph.text)
+print("")
