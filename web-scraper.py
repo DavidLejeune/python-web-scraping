@@ -31,5 +31,10 @@ print("")
 print("Print all paragraph elements with FOR loop")
 print("------------------------------------------")
 for paragraph in soup.find_all('p'):
-    print(paragraph)
+    print(paragraph.text)
+print("")
+
+print("Getting all the text")
+print("--------------------")
+print(soup.get_text())
 print("")
