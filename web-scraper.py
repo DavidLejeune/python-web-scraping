@@ -38,3 +38,9 @@ print("Getting all the text")
 print("--------------------")
 print(soup.get_text())
 print("")
+
+print("Finding all the links")
+print("---------------------")
+for url in soup.find_all('a'):
+    print(url.get('href'))
+print("")
